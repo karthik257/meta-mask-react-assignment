@@ -4,7 +4,7 @@ export const ButtonComponent = () => {
   const [walletAddress, setWalletAddress] = useState("");
   const handleConnect = async () => {
     if (window.ethereum) {
-      console.log("Metamask detected");
+      console.log("Metamask detected...");
 
       try {
         const accounts = await window.ethereum.request({
@@ -15,13 +15,14 @@ export const ButtonComponent = () => {
         console.log("Error fetching account");
       }
     } else {
-      alert("Metamask not detected");
+      alert("Metamask not detected...");
     }
   };
   return (
     <>
       <button onClick={handleConnect}>Connect to Wallet</button>
-      <h1>Your Meta Mask wallet address = {walletAddress}</h1>
+      <h1>Your Meta Mask wallet address</h1>
+      <h1> {walletAddress}</h1>
     </>
   );
 };
